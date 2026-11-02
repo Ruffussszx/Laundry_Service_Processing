@@ -41,11 +41,11 @@ public class LaundryServicesFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 255, 255));
 
         label1.setAlignment(java.awt.Label.CENTER);
         label1.setBackground(new java.awt.Color(51, 51, 255));
-        label1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        label1.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         label1.setName(""); // NOI18N
         label1.setText("Laundry Services");
 
@@ -59,19 +59,22 @@ public class LaundryServicesFrame extends javax.swing.JFrame {
 
         textField2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
-        button2.setBackground(new java.awt.Color(51, 102, 255));
+        button2.setBackground(new java.awt.Color(51, 51, 255));
         button2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         button2.setLabel("Register Laundry");
         button2.addActionListener(this::button2ActionPerformed);
 
+        button1.setBackground(new java.awt.Color(204, 204, 204));
         button1.setLabel("Process Next");
 
+        button3.setBackground(new java.awt.Color(204, 204, 204));
         button3.setLabel("Display Processing");
         button3.addActionListener(this::button3ActionPerformed);
 
         textField3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
-        button4.setLabel("button4");
+        button4.setBackground(new java.awt.Color(204, 204, 204));
+        button4.setLabel("Search");
 
         label4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         label4.setText("Transaction ID");
