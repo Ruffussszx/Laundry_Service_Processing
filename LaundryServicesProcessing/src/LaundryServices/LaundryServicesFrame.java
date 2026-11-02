@@ -9,6 +9,23 @@ package LaundryServices;
  * @author kentb
  */
 public class LaundryServicesFrame extends javax.swing.JFrame {
+    
+    static class LaundryOrder {
+    String transactionID;
+    String customerName;
+    double weight;
+    String status;
+
+    LaundryOrder(String transactionID,
+                 String customerName,
+                 double weight) {
+
+        this.transactionID = transactionID;
+        this.customerName = customerName;
+        this.weight = weight;
+        this.status = "Pending";
+    }
+}
 
     /**
      * Creates new form LaundryServicesFrame
