@@ -26,6 +26,17 @@ public class LaundryServicesFrame extends javax.swing.JFrame {
         this.status = "Pending";
     }
 }
+    LaundryOrder[] queue = new LaundryOrder[100];
+
+    int front = 0;
+    int rear = -1;
+    int count = 0;
+
+    // Stores all orders for searching
+    LaundryOrder[] records = new LaundryOrder[100];
+    int totalRecords = 0;
+
+    int transactionNumber = 1001;
 
     /**
      * Creates new form LaundryServicesFrame
