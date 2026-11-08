@@ -10,14 +10,14 @@ public class LaundryMethods{
 
     public static String searchTransaction(
             String id,
-            LaundryMethods.LaundryOrder[] records,
+            LaundryServicesFrame.LaundryOrder[] records,
             int totalRecords) {
 
         for (int i = 0; i < totalRecords; i++) {
 
             if (records[i].transactionID.equalsIgnoreCase(id)) {
 
-                LaundryMethods.LaundryOrder order = records[i];
+                LaundryServicesFrame.LaundryOrder order = records[i];
 
                 return "TRANSACTION FOUND!\n\n"
                         + "Transaction ID: " + order.transactionID
