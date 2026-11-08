@@ -174,7 +174,13 @@ public class LaundryServicesFrame extends javax.swing.JFrame {
     button3.addActionListener(e -> {
         processNext();
     });
-
+    
+        // Search Transaction
+    button4.addActionListener(e -> {
+        searchTransaction(textField3.getText());
+    });
+}
+    
     }
     /**
      * This method is called from within the constructor to initialize the form.
