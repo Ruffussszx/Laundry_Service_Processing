@@ -301,6 +301,7 @@ public class LaundryServicesFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+        registerLaundry();
         // TODO add your handling code here:
     }//GEN-LAST:event_button2ActionPerformed
 
@@ -323,7 +324,8 @@ public class LaundryServicesFrame extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(() -> new LaundryServicesFrame().setVisible(true));
     }
-
+     void registerLaundry() {
+     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button button1;
     private java.awt.Button button2;
