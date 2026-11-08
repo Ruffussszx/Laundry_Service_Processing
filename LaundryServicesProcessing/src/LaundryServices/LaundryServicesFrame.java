@@ -98,7 +98,33 @@ public class LaundryServicesFrame extends javax.swing.JFrame {
         this, result
     );
 }  
+     
+     void processNext() {
 
+        if (count == 0) {
+            javax.swing.JOptionPane.showMessageDialog(
+                this, "No laundry orders to process."
+            );
+            return;
+        }
+
+        LaundryOrder order = queue[front];
+
+        queue[front] = null;
+
+        front = (front + 1) % queue.length;
+
+        count--;
+
+        order.status = "Completed";
+
+        javax.swing.JOptionPane.showMessageDialog(
+            this,
+            "Laundry order processed!\n"
+            + "Transaction ID: " + order.transactionID
+            + "\nCustomer: " + order.customerName
+        );
+    }
     /**
      * Creates new form LaundryServicesFrame
      */
