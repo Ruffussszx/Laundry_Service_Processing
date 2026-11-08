@@ -38,6 +38,31 @@ public class LaundryServicesFrame extends javax.swing.JFrame {
 
     int transactionNumber = 1001;
 
+     void registerOrder(LaundryOrder order) {
+
+        if (count == queue.length ||
+            totalRecords == records.length) {
+
+            javax.swing.JOptionPane.showMessageDialog(
+                this, "Laundry queue is full!"
+            );
+
+            return;
+        }
+
+        rear = (rear + 1) % queue.length;
+        queue[rear] = order;
+        count++;
+
+        records[totalRecords] = order;
+        totalRecords++;
+
+        javax.swing.JOptionPane.showMessageDialog(
+            this, "Laundry order registered!\n"
+            + "Transaction ID: " + order.transactionID
+        );
+    }
+
     /**
      * Creates new form LaundryServicesFrame
      */
