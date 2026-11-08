@@ -159,23 +159,8 @@ public class LaundryServicesFrame extends javax.swing.JFrame {
      */
     public LaundryServicesFrame() {
         initComponents();
-        textField2.setText("Enter Customer Name...");
-    textField2.setForeground(java.awt.Color.GRAY);
-
-    textField2.addFocusListener(new java.awt.event.FocusAdapter() {
-
-        @Override
-        public void focusGained(java.awt.event.FocusEvent evt) {
-            if (textField2.getText().equals("Enter Customer Name...")) {
-                textField2.setText("");
-                textField2.setForeground(java.awt.Color.BLACK);
-            }
-        }
-
-    });
+        
     }
-    
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -219,6 +204,7 @@ public class LaundryServicesFrame extends javax.swing.JFrame {
         textField2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         textField2.addActionListener(this::textField2ActionPerformed);
 
+        button2.setActionCommand("RegisterOrder");
         button2.setBackground(new java.awt.Color(51, 51, 255));
         button2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         button2.setLabel("Register Laundry");
