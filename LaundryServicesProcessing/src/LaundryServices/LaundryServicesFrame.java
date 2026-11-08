@@ -148,13 +148,33 @@ public class LaundryServicesFrame extends javax.swing.JFrame {
             return;
         }
     }
-        }
+        
+            javax.swing.JOptionPane.showMessageDialog(
+        this, "Transaction ID not found."
+    );
+}
+
     /**
      * Creates new form LaundryServicesFrame
      */
     public LaundryServicesFrame() {
         initComponents();
+        textField2.setText("Enter Customer Name...");
+    textField2.setForeground(java.awt.Color.GRAY);
+
+    textField2.addFocusListener(new java.awt.event.FocusAdapter() {
+
+        @Override
+        public void focusGained(java.awt.event.FocusEvent evt) {
+            if (textField2.getText().equals("Enter Customer Name...")) {
+                textField2.setText("");
+                textField2.setForeground(java.awt.Color.BLACK);
+            }
+        }
+
+    });
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -197,6 +217,7 @@ public class LaundryServicesFrame extends javax.swing.JFrame {
         label3.setText("Customer Name");
 
         textField2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        textField2.addActionListener(this::textField2ActionPerformed);
 
         button2.setBackground(new java.awt.Color(51, 51, 255));
         button2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
@@ -304,6 +325,10 @@ public class LaundryServicesFrame extends javax.swing.JFrame {
     private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_button4ActionPerformed
+
+    private void textField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField2ActionPerformed
 
     /**
      * @param args the command line arguments
