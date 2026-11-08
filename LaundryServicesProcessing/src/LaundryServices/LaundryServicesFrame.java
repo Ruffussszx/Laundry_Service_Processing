@@ -99,32 +99,34 @@ public class LaundryServicesFrame extends javax.swing.JFrame {
     );
 }  
      
-     void processNext() {
+ void processNext() {
 
-        if (count == 0) {
-            javax.swing.JOptionPane.showMessageDialog(
-                this, "No laundry orders to process."
-            );
-            return;
-        }
-
-        LaundryOrder order = queue[front];
-
-        queue[front] = null;
-
-        front = (front + 1) % queue.length;
-
-        count--;
-
-        order.status = "Completed";
-
+    if (count == 0) {
         javax.swing.JOptionPane.showMessageDialog(
-            this,
-            "Laundry order processed!\n"
-            + "Transaction ID: " + order.transactionID
-            + "\nCustomer: " + order.customerName
+            this, "No laundry orders to process."
         );
+        return;
     }
+
+    LaundryOrder order = queue[front];
+
+    queue[front] = null;
+
+    front = (front + 1) % queue.length;
+
+    count--;
+
+    order.status = "Completed";
+
+    javax.swing.JOptionPane.showMessageDialog(
+        this,
+        "LAUNDRY ORDER COMPLETED!\n\n"
+        + "Transaction ID: " + order.transactionID
+        + "\nCustomer Name: " + order.customerName
+        + "\nWeight: " + order.weight + " kg"
+        + "\nStatus: " + order.status
+    );
+}
         void searchTransaction(String id) {
 
     for (int i = 0; i < totalRecords; i++) {
@@ -162,25 +164,23 @@ public class LaundryServicesFrame extends javax.swing.JFrame {
             
     // Register Laundry
     button1.addActionListener(e -> {
-        registerLaundry();
+        processNext();
     });
 
     // Display Pending
     button2.addActionListener(e -> {
-        displayPending();
+        registerLaundry();
     });
     
         // Process Next
     button3.addActionListener(e -> {
-        processNext();
+        displayPending();
     });
     
         // Search Transaction
     button4.addActionListener(e -> {
-        searchTransaction(textField3.getText());
-    });
-}
-    
+             searchTransaction(textField3.getText());
+    });   
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -344,8 +344,51 @@ public class LaundryServicesFrame extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(() -> new LaundryServicesFrame().setVisible(true));
     }
-     void registerLaundry() {
-     }
+    void registerLaundry() {
+
+    String customerName = textField2.getText().trim();
+    String weightText = textField1.getText().trim();
+
+    if (customerName.isEmpty() || weightText.isEmpty()) {
+
+        javax.swing.JOptionPane.showMessageDialog(
+            this, "Please complete all fields."
+        );
+
+        return;
+    }
+        double weight;
+
+    try {
+        weight = Double.parseDouble(weightText);
+
+        if (weight <= 0) {
+            throw new NumberFormatException();
+        }
+
+    } catch (NumberFormatException ex) {
+
+        javax.swing.JOptionPane.showMessageDialog(
+            this, "Enter a valid laundry weight."
+        );
+
+        return;
+    }
+
+    String transactionID = "T" + transactionNumber;
+
+    LaundryOrder order = new LaundryOrder(
+        transactionID,
+        customerName,
+        weight
+    );
+
+    registerOrder(order);
+
+    transactionNumber++;
+}
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button button1;
     private java.awt.Button button2;
