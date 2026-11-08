@@ -71,7 +71,34 @@ public class LaundryServicesFrame extends javax.swing.JFrame {
         );
         return;
         }
+      String result = "PENDING LAUNDRY ORDERS\n\n";
+
+    for (int i = 0; i < count; i++) {
+
+        int index = (front + i) % queue.length;
+
+        LaundryOrder order = queue[index];
+
+        result += "Transaction ID: "
+                + order.transactionID + "\n";
+
+        result += "Customer Name: "
+                + order.customerName + "\n";
+
+        result += "Weight: "
+                + order.weight + " kg\n";
+
+        result += "Status: "
+                + order.status + "\n";
+
+        result += "----------------------\n";
     }
+
+    javax.swing.JOptionPane.showMessageDialog(
+        this, result
+    );
+}  
+
     /**
      * Creates new form LaundryServicesFrame
      */
