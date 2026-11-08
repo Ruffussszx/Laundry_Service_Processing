@@ -159,7 +159,18 @@ public class LaundryServicesFrame extends javax.swing.JFrame {
      */
     public LaundryServicesFrame() {
         initComponents();
-        
+            
+    // Register Laundry
+    button1.addActionListener(e -> {
+        registerLaundry();
+    });
+
+    // Display Pending
+    button2.addActionListener(e -> {
+        displayPending();
+    });
+
+
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -301,7 +312,6 @@ public class LaundryServicesFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-        registerLaundry();
         // TODO add your handling code here:
     }//GEN-LAST:event_button2ActionPerformed
 
