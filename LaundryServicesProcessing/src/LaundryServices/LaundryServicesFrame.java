@@ -125,6 +125,17 @@ public class LaundryServicesFrame extends javax.swing.JFrame {
             + "\nCustomer: " + order.customerName
         );
     }
+        void searchTransaction(String id) {
+
+    for (int i = 0; i < totalRecords; i++) {
+
+        if (records[i].transactionID
+                .equalsIgnoreCase(id)) {
+
+            LaundryOrder order = records[i];
+        }
+     }
+   }
     /**
      * Creates new form LaundryServicesFrame
      */
