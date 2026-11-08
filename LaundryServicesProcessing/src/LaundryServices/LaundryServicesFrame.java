@@ -133,9 +133,22 @@ public class LaundryServicesFrame extends javax.swing.JFrame {
                 .equalsIgnoreCase(id)) {
 
             LaundryOrder order = records[i];
+        
+     
+   
+        javax.swing.JOptionPane.showMessageDialog(
+                this,
+                "TRANSACTION FOUND!\n\n"
+                + "Transaction ID: " + order.transactionID
+                + "\nCustomer Name: " + order.customerName
+                + "\nWeight: " + order.weight + " kg"
+                + "\nStatus: " + order.status
+            );
+
+            return;
         }
-     }
-   }
+    }
+        }
     /**
      * Creates new form LaundryServicesFrame
      */
