@@ -62,7 +62,16 @@ public class LaundryServicesFrame extends javax.swing.JFrame {
             + "Transaction ID: " + order.transactionID
         );
     }
+     
+     void displayPending() {
 
+    if (count == 0) {
+        javax.swing.JOptionPane.showMessageDialog(
+            this, "No pending laundry orders."
+        );
+        return;
+        }
+    }
     /**
      * Creates new form LaundryServicesFrame
      */
