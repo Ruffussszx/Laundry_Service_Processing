@@ -169,7 +169,11 @@ public class LaundryServicesFrame extends javax.swing.JFrame {
     button2.addActionListener(e -> {
         displayPending();
     });
-
+    
+        // Process Next
+    button3.addActionListener(e -> {
+        processNext();
+    });
 
     }
     /**
